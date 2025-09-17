@@ -4,13 +4,58 @@ import Layout from '../layouts/Layout.astro';
 import CardContainer from '../components/CardContainer.astro';
 import Card from '../components/Card.astro';
 import '../styles/global.css';
-
 ---
 
 <Layout>
 	<CardContainer>
-	<Card title="Card 1" description="This is a card description"/>
-	<Card title="Card 2" description="This is a card description"/>
-	<Card title="Card 3" description="This is a card description"/>
+		<Card 
+			title="Smartphone XL" 
+			description="Pantalla 6.7 pulgadas, 128GB almacenamiento, cámara triple." 
+			image="https://picsum.photos/400/300?random=1"
+			price="$299"
+			discount={50}
+		/>
+		<Card 
+			title="Auriculares Inalámbricos" 
+			description="Sonido premium, cancelación de ruido, 20h batería." 
+			image="https://picsum.photos/400/300?random=2"
+			price="$89" 
+		/>
+		<Card 
+			title="Smart Watch" 
+			description="Monitor de actividad, resistente al agua, notificaciones." 
+			image="https://picsum.photos/400/300?random=3"
+			price="$159" 
+		/>
+		<Card 
+			title="Tablet Pro" 
+			description="8GB RAM, 256GB, perfecta para trabajo y entretenimiento." 
+			image="https://picsum.photos/400/300?random=4"
+			price="$399" 
+		/>
+		<Card 
+			title="Laptop Ultrabook" 
+			description="Intel i7, 16GB RAM, SSD 512GB, 13.3 pulgadas." 
+			image="https://picsum.photos/400/300?random=5"
+			price="$999" 
+		/>
+		<Card 
+			title="Cámara DSLR" 
+			description="24MP, grabación 4K, kit de lentes incluido." 
+			image="https://picsum.photos/400/300?random=6"
+			price="$599" 
+		/>
+		<Card 
+			title="Altavoz Bluetooth" 
+			description="360° sonido, resistente al agua, 12h de batería." 
+			image="https://picsum.photos/400/300?random=7"
+			price="$129" 
+		/>
+		<Card 
+			title="Teclado Mecánico" 
+			description switches="Switches RGB, retroiluminado, teclas programables." 
+			image="https://picsum.photos/400/300?random=8"
+			price="$79" 
+		/>
 	</CardContainer>
-</Layout> 
+</Layout>

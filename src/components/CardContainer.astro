@@ -2,23 +2,128 @@
 import "../styles/global.css";
 ---
 
-<div class="card-container m-6 grid grid-flow-col grid-rows-4 bg-gray-200 gap-4 rounded-lg">
-	<slot></slot>
+<div class="card-container">
+  <div class="container-header">
+    <h1>Catálogo de Productos</h1>
+    <p>Descubre nuestras mejores ofertas</p>
+  </div>
+  <div class="cards-grid">
+    <slot></slot>
+  </div>
 </div>
 
-
 <style>
-	.card-container{
-		width: 90vw;
-		height: 90vh;
-		background-color: rgb(255, 255, 255);
-		border-radius: 10px;
-		box-shadow: 0 0 10px rgb(0, 0, 0, 0.5);
-		gap: 10px;
-	}
+  .card-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem;
+    background: var(--container-bg, linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%));
+    transition: background 0.3s ease;
+  }
 
+  .container-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
 
+  .container-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color, #2d3748);
+    margin-bottom: 0.5rem;
+  }
 
+  .container-header p {
+    font-size: 1.1rem;
+    color: var(--text-secondary, #718096);
+  }
 
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* Modo oscuro */
+  @media (prefers-color-scheme: dark) {
+    .card-container {
+      --container-bg: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+      --text-color: #e2e8f0;
+      --text-secondary: #a0aec0;
+    }
+  }
+
+  /* Responsive design */
+  @media (max-width: 1200px) {
+    .cards-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+  }
+
+  @media (max-width: 900px) {
+    .cards-grid {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.75rem;
+    }
+    
+    .container-header h1 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .card-container {
+      padding: 1.5rem;
+    }
+    
+    .cards-grid {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .container-header {
+      margin-bottom: 2rem;
+    }
+    
+    .container-header h1 {
+      font-size: 1.75rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .cards-grid {
+      grid-template-columns: 1fr;
+      max-width: 500px;
+    }
+    
+    .card-container {
+      padding: 1rem;
+    }
+    
+    .container-header h1 {
+      font-size: 1.5rem;
+    }
+    
+    .container-header p {
+      font-size: 1rem;
+    }
+  }
+
+  /* Animaciones suaves */
+  .cards-grid {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 </style>
-
